@@ -1,0 +1,41 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Document
+    link(rel="stylesheet", href=`./css/index.css`)
+  body 
+    nav.navbar
+      .container
+        a.logo(href="./index.html")
+          p ㋡
+          //- img(alt="LOGO" src="./assets/img/FESD-logo.svg")
+        ul.menu
+          li
+            a(href="javascript:;") About
+          li
+            a(href="javascript:;" data-modal-target="my-modal") 燈箱
+          li
+            a.anchor-btn(href="javascript:;" data-anchor-target=".section1") 錨點
+          li(web-share)
+            a.copy-url(href="javascript:;" share-target="url" copy-success="已複製連結" copy-text copy-duration) 複製連結
+
+    main
+      .video-section
+        .photo-box(video-target video-id="5bMdjkfvONE" video-player-playtype="click" video-player-type="onBox" video-type="youtube")
+          img(alt="" src="https://i.imgur.com/Vtxqm43.jpg")
+        //- .photo-box(video-target video-id="5bMdjkfvONE" video-player-playtype="click" video-player-type="onBox" video-type="youtubeAPI")
+        //-   img(alt="" src="https://i.imgur.com/4JXob31.jpg")
+        //- .photo-box(video-target video-id="XNDk5NzkwNzY3Mg" video-player-playtype="click" video-player-type="onBox" video-type="youku")
+        //-   img(alt="" src="https://i.imgur.com/76qUR5C.jpg")
+        //- .photo-box(video-target video-id="5bMdjkfvONE" video-player-playtype="click" video-player-type="onBox" video-type="youtube")
+        //-   img(alt="" src="https://i.imgur.com/7m4mrMP.jpg")
+
+    // 共用 JS
+    script(defer src="./js/jquery-3.6.0.min.js")
+    // 個別頁面引用 JS
+    script(defer src="./js/fesdDB.js")
+    script(defer src="./js/global.min.js")
+    script(defer src="./js/pages/index.min.js")

@@ -1,0 +1,14 @@
+{
+  "name": "wdd_HW",
+  "author": "",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "keywords": [],
+  "license": "ISC",
+  "dependencies": {
+    "overlayscrollbars": "^1.13.1",
+    "tua-body-scroll-lock": "^1.2.1",
+    "vanilla-lazyload": "^17.8.3"
+  }
+}
