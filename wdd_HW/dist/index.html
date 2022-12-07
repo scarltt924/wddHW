@@ -20,9 +20,86 @@
       </div>
     </nav>
     <main>
-      <div class="video-section">
-        <div class="photo-box" video-target video-id="5bMdjkfvONE" video-player-playtype="click" video-player-type="onBox" video-type="youtube"><img alt="" src="https://i.imgur.com/Vtxqm43.jpg"></div>
-      </div>
+      <section class="section1" data-aost data-aost-fade-up>
+        <h2>燈箱 + 錨點 + Aost4</h2>
+        <button data-modal-target="ajaxMe" data-modal-route="./ajax.html">點我！</button>
+      </section>
+      <section class="section2" data-aost data-aost-fade-up>
+        <h2>大頭貼功能</h2>
+        <div class="welcome-wrap">
+          <div class="photo" data-upload-item="">
+            <input class="upload-btn" type="file" title="">
+            <div class="preview" data-preview="">
+              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 47.81 50">
+                <g>
+                  <path d="M32.76,31.14H17.36A16.26,16.26,0,0,0,1.1,47.41v.29A2.23,2.23,0,0,0,3.27,50H46.71a2.22,2.22,0,0,0,2.19-2.2v-.1A16.34,16.34,0,0,0,32.76,31.14Z" transform="translate(-1.1)" fill="#2c2c2d"></path>
+                  <path d="M24.87,27.94h.18A14,14,0,1,0,11.18,13.87v.2A13.78,13.78,0,0,0,24.87,27.94Z" transform="translate(-1.1)" fill="#2c2c2d"></path>
+                </g>
+              </svg>
+            </div>
+          </div>
+          <div class="text">
+            <h3>Hi, user</h3>
+            <p></p>
+          </div>
+        </div>
+      </section>
+      <section class="section3"> 
+        <h2>類別拖拉</h2>
+        <div class="category-slider">
+          <div class="wrapper">
+            <div class="item active"><a class="category" href="javascript:;">category1</a></div>
+            <div class="item"><a class="category" href="javascript:;">category2</a></div>
+            <div class="item"><a class="category" href="javascript:;">category3</a></div>
+            <div class="item"><a class="category" href="javascript:;">category4</a></div>
+            <div class="item"><a class="category" href="javascript:;">category5</a></div>
+            <div class="item"><a class="category" href="javascript:;">category6</a></div>
+            <div class="item"><a class="category" href="javascript:;">category7</a></div>
+            <div class="item"><a class="category" href="javascript:;">category8</a></div>
+            <div class="item"><a class="category" href="javascript:;">category9</a></div>
+            <div class="item"><a class="category" href="javascript:;">category10</a></div>
+          </div>
+        </div>
+      </section>
+      <section class="section4"> 
+        <h2>下拉選單</h2>
+        <div class="wdd-form">
+          <div class="form-row">
+            <div class="form-grid">
+              <!-- 複選下拉選單 .form-group 不要用label標籤-->
+              <div class="form-group">
+                <p class="subject">午餐要吃什麼</p>
+                <div class="dropdown-wrap">
+                  <dropdown-el class="filter dropdown1" d4-placeholder="請告訴我們，你想吃的午餐" control-elements=".dropdown2" d4-value="" form-field="pop" field-type="isSelect" multiple>
+                    <li>古早飯堂</li>
+                    <li>阿強師</li>
+                    <li>健康餐</li>
+                    <li>牛肉麵豆花</li>
+                    <li data-option="customID">其他</li>
+                  </dropdown-el>
+                  <dropdown-el class="dropdown2 disabled" d4-placeholder="請先選擇午餐吃什麼" d4-value="option5">
+                    <li>約翰紅茶</li>
+                    <li>少少</li>
+                    <li>五桐號</li>
+                    <li>八曜和茶</li>
+                    <li>龜記</li>
+                    <li>茶湯會</li>
+                    <li>別茶人</li>
+                  </dropdown-el>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section5"> 
+        <h2>影片</h2>
+        <div class="video-section">
+          <div class="photo-box" video-target video-id="XNDQ2OTIwNDYwMA" video-type="youku"><img alt="" src="https://picsum.photos/seed/picsum/200/300"></div>
+          <div class="photo-box" video-target video-id="776749483" video-type="vimeo"></div>
+          <div class="photo-box" video-target video-id="rHlOJrTnH-o" video-mode="onPage" video-type="youtube"><img alt="" src="https://picsum.photos/seed/picsum/200/300"></div>
+        </div>
+      </section>
     </main>
     <!-- 共用 JS-->
     <script defer src="./js/jquery-3.6.0.min.js"></script>
