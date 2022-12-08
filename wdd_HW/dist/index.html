@@ -15,7 +15,7 @@
     <main>
       <section class="section1" data-aost data-aost-fade-up>
         <h2>燈箱 + 錨點 + Aost4</h2>
-        <button data-modal-target="ajaxMe" data-modal-route="./ajax.html">點我！</button>
+        <button onclick="_g.modalOpen()">點我！點我！</button>
       </section>
       <section class="section2" data-aost data-aost-fade-up>
         <h2>大頭貼功能</h2>
@@ -37,7 +37,7 @@
           </div>
         </div>
       </section>
-      <section class="section3"> 
+      <section class="section3" data-aost data-aost-fade-up>
         <h2>類別拖拉</h2>
         <div class="category-slider">
           <div class="wrapper">
@@ -54,44 +54,37 @@
           </div>
         </div>
       </section>
-      <section class="section4"> 
+      <section class="section4" data-aost data-aost-fade-up>
         <h2>下拉選單</h2>
-        <div class="wdd-form">
-          <div class="form-row">
-            <div class="form-grid">
-              <!-- 複選下拉選單 .form-group 不要用label標籤-->
-              <div class="form-group">
-                <p class="subject">午餐要吃什麼</p>
-                <div class="dropdown-wrap">
-                  <dropdown-el class="filter dropdown1" d4-placeholder="請告訴我們，你想吃的午餐" control-elements=".dropdown2" d4-value="" form-field="pop" field-type="isSelect" multiple>
-                    <li>古早飯堂</li>
-                    <li>阿強師</li>
-                    <li>健康餐</li>
-                    <li>牛肉麵豆花</li>
-                    <li data-option="customID">其他</li>
-                  </dropdown-el>
-                  <dropdown-el class="dropdown2 disabled" d4-placeholder="請先選擇午餐吃什麼" d4-value="喝飲料">
-                    <li>約翰紅茶</li>
-                    <li data-option="customID">少少</li>
-                    <li>五桐號</li>
-                    <li>八曜和茶</li>
-                    <li>龜記</li>
-                    <li>茶湯會</li>
-                    <li>別茶人</li>
-                    <li style="display: none;">喝飲料</li>
-                  </dropdown-el>
-                </div>
-              </div>
-            </div>
+        <div class="dropdown-group">
+          <p class="subject">午餐要吃什麼</p>
+          <div class="dropdown-wrap">
+            <dropdown-el class="filter dropdown1" d4-placeholder="請告訴我們，你想吃的午餐" control-elements=".dropdown2" d4-value="" form-field="pop" field-type="isSelect" multiple>
+              <li>古早飯堂</li>
+              <li>阿強師</li>
+              <li>健康餐</li>
+              <li>牛肉麵豆花</li>
+              <li data-option="customID">其他</li>
+            </dropdown-el>
+            <dropdown-el class="dropdown2 disabled" d4-placeholder="請先選擇午餐吃什麼" d4-value="喝飲料">
+              <li>約翰紅茶</li>
+              <li data-option="customID">少少</li>
+              <li>五桐號</li>
+              <li>八曜和茶</li>
+              <li>龜記</li>
+              <li>茶湯會</li>
+              <li>別茶人</li>
+              <li style="display: none;">喝飲料</li>
+            </dropdown-el>
           </div>
         </div>
       </section>
-      <section class="section5"> 
+      <section class="section5" data-aost data-aost-fade-up>
         <h2>影片</h2>
         <div class="video-section">
-          <div class="photo-box" video-target video-id="XNDQ2OTIwNDYwMA" video-type="youku"><img alt="" src="https://picsum.photos/seed/picsum/200/300"></div>
+          <div class="photo-box" video-target video-id="XNDQ2OTIwNDYwMA" video-type="youku"><img alt="" src="https://picsum.photos/id/496/1410/800"></div>
           <div class="photo-box" video-target video-id="776749483" video-type="vimeo"></div>
-          <div class="photo-box" video-target video-id="rHlOJrTnH-o" video-mode="onPage" video-type="youtube"><img alt="" src="https://picsum.photos/seed/picsum/200/300"></div>
+          <div class="photo-box" video-target video-id="kQvT37OzkP8" video-mode="onPage" video-type="youtube"><img alt="" src="https://picsum.photos/seed/picsum/200/300"></div>
         </div>
       </section>
     </main>

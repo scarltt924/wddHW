@@ -1,68 +1,47 @@
-// 先將 Modal4 引入
 import Modal4 from '../fesd2022/modal4/modal4'
 
-new Modal4('[data-modal-target]')
-const modalsOpen = new Modal4('[data-modal-target]', {
-    on: {
-        // 開啟燈箱時 update lazyload
-        open() {
-            new Aost4('[data-aost]', {
-                scroller: '[data-modal-id="ajaxMe"] .os-viewport',
-                delay: 200
-            })
-            setTimeout(function () {
-                Anchor4.run({
-                    target: '.box.box4',
-                    container: '[data-modal-id="ajaxMe"] .os-viewport',
-                    spacer: '.box.box1',
-                    on: {
-                        afterScroll() {
-                            alert('yo Man')
-                        }
-                    }
-                })
-            },1000)
-        }
+// 燈箱
+const modalHandler = function() {
+    _g.modalOpen = () => {
+        Modal4.open({
+            target: 'ajaxMe',
+            route: './ajax.html',
+            on: {
+                open() {
+                    new Aost4('[data-aost]', {
+                        scroller: '[data-modal-id="ajaxMe"] .os-viewport',
+                        delay: 200
+                    })
+                    setTimeout(function() {
+                        Anchor4.run({
+                            target: '.box.box2',
+                            container: '[data-modal-id="ajaxMe"] .os-viewport',
+                            spacer: '.nav-bar',
+                            on: {
+                                afterScroll() {
+                                    alert('yo Man')
+                                }
+                            }
+                        })
+                    }, 1000)
+                }
+            }
+        })
     }
-})
+}
 
-// window._g.modalOpen = () => {
-//     Modal4.open({
-//         target: 'ajaxMe',
-//         route: './ajax.html',
-//         on: {
-//             open() {
-//                 new Aost4('[data-aost]', {
-//                     scroller: '[data-modal-id="ajaxMe"] .os-viewport',
-//                     delay: 200
-//                 })
-//                 setTimeout(function () {
-//                     Anchor4.run({
-//                         target: '.box.box4',
-//                         container: '[data-modal-id="ajaxMe"] .os-viewport',
-//                         spacer: '.box.box1',
-//                     })
-//                     setTimeout(function () {
-//                         alert('yo Man')
-//                     },2000)
-//                 },1000)
-//             }
-//         }
-//     })
-// }
-
-// 第一區塊
-const s1Handler = function () {
-    _g.imagePreview('.upload-btn',{
+// 大頭貼
+const imgPreviewHandler = function() {
+    _g.imagePreview('.upload-btn', {
         sizeLimit: 1, //大小限制 (type: Number 單位: MB)
         on: {
             changeAfter() {
                 console.log('yes');
-                alert('恭喜!!!')
+                alert('更換成功!!!!')
             },
             overLimit() {
                 console.log('no!!!');
-                alert('NO!!!')
+                alert('NO!!!!!')
             },
         },
     });
@@ -82,10 +61,27 @@ const s1Handler = function () {
     text.innerText = greetings();
 };
 
-
-$(() => {
+// 類別拖拉
+const categoryHandler = function() {
     _g.categorySlider('.category-slider', {
         breakpoint: 1200,
     });
-    s1Handler();
+}
+
+// 下拉選單
+const dropdownHandler = function() {
+    const $dropdown = $('dropdown-el');
+    $dropdown.each((i, el) => {
+        el.on('change', function() {
+            const key = i + 1
+            console.log('第' + key + '個下拉選單');
+        })
+    })
+}
+
+$(() => {
+    modalHandler();
+    imgPreviewHandler();
+    categoryHandler();
+    dropdownHandler();
 });
