@@ -12,15 +12,6 @@ html(lang="en")
         a.logo(href="./index.html")
           p ㋡
           //- img(alt="LOGO" src="./assets/img/FESD-logo.svg")
-        ul.menu
-          li
-            a(href="javascript:;") About
-          li
-            a(href="javascript:;" data-modal-target="my-modal") 燈箱
-          li
-            a.anchor-btn(href="javascript:;" data-anchor-target=".section1") 錨點
-          li(web-share)
-            a.copy-url(href="javascript:;" share-target="url" copy-success="已複製連結" copy-text copy-duration) 複製連結
 
     main
       section.section1(data-aost data-aost-fade-up)
@@ -78,14 +69,15 @@ html(lang="en")
                     li 健康餐
                     li 牛肉麵豆花
                     li(data-option="customID") 其他
-                  dropdown-el.dropdown2.disabled(d4-placeholder="請先選擇午餐吃什麼" d4-value="option5")
+                  dropdown-el.dropdown2.disabled(d4-placeholder="請先選擇午餐吃什麼" d4-value="喝飲料")
                     li 約翰紅茶
-                    li 少少
+                    li(data-option="customID") 少少
                     li 五桐號
                     li 八曜和茶
                     li 龜記
                     li 茶湯會
                     li 別茶人
+                    li(style="display: none;") 喝飲料
       section.section5 
         h2 影片
         .video-section

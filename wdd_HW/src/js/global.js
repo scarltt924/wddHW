@@ -137,9 +137,7 @@ const _g = {
         return data;
     },
     lazy: new LazyLoad({}),
-    aost4: new Aost4('[data-aost]', {
-        scroller: 'modern-modal[data-modal-id="ajaxMe"]',
-    }),
+    aost4: new Aost4('[data-aost]'),
     anchor4: new Anchor4('[data-anchor-target]'),
     modal4: new Modal4('[data-modal-target]', {
         on: {
