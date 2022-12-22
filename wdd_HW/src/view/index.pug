@@ -16,6 +16,8 @@ html(lang="en")
       section.section1(data-aost data-aost-fade-up)
         h2 燈箱 + 錨點 + Aost4
         button(onclick="_g.modalOpen()") 點我！點我！
+        ripple-btn.square 點我！點我！
+        ripple-btn.circle 點我
 
       section.section2(data-aost data-aost-fade-up)
         h2 大頭貼功能
@@ -35,15 +37,15 @@ html(lang="en")
         h2 類別拖拉
         .category-slider
           .wrapper
-            .item.active
+            ripple-btn.item.active
               a.category(href="javascript:;") category1
-            .item
+            ripple-btn.item
               a.category(href="javascript:;") category2
-            .item
+            ripple-btn.item
               a.category(href="javascript:;") category3
-            .item
+            ripple-btn.item
               a.category(href="javascript:;") category4
-            .item
+            ripple-btn.item
               a.category(href="javascript:;") category5
             .item
               a.category(href="javascript:;") category6
@@ -86,6 +88,8 @@ html(lang="en")
             img(alt="" src="")
           .photo-box(video-target video-id="kQvT37OzkP8" video-mode="onPage" video-type="youtube")
             img(alt="" src="https://picsum.photos/460/260")
+      
+
 
     // 共用 JS
     script(defer src="./js/jquery-3.6.0.min.js")

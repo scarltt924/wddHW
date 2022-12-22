@@ -1,0 +1,29 @@
+ripple-btn
+  overflow: hidden
+  position: relative
+  display: flex
+  justify-content: center
+  align-items: center
+  cursor: pointer
+  span 
+    position: absolute
+    // background: #7a1b1b
+    color: #7a1b1b
+    transform: translate(-50%, -50%)
+    pointer-events: none
+    border-radius: 50%
+    animation: animate 1s linear infinite
+  &.bg
+    background: #7a1b1b
+
+  @keyframes animate 
+    0% 
+      // width: 0
+      // height: 0
+      transform: translate(-50%, -50%) scale(.01)
+      opacity: 0.3
+    100% 
+      // width: 500px
+      // height: 500px
+      transform: translate(-50%, -50%) scale(40)
+      opacity: 0

@@ -27,9 +27,9 @@ export default {
     // videoPlayer customElements 內結構
     TEMPLATE() {
         return `
-      <div class="player-container">
-          <div class="player-wrapper"></div>
-      </div>
-      `;
+            <div class="player-container">
+                <div class="player-wrapper"></div>
+            </div>
+            `;
     },
 };
