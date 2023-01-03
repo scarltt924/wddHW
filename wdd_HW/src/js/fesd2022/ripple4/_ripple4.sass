@@ -5,25 +5,26 @@ ripple-btn
   justify-content: center
   align-items: center
   cursor: pointer
+  &.button
+    background-color: #000
+    color: #fff
   span 
+    width: 100px
+    height: 100px
     position: absolute
-    // background: #7a1b1b
-    color: #7a1b1b
-    transform: translate(-50%, -50%)
+    background: #ffffff
+    // color: #7a1b1b
+    transform: translate(-50%, -50%) scale(0)
     pointer-events: none
     border-radius: 50%
-    animation: animate 1s linear infinite
+    animation: animate .6s linear
+    opacity: 1
   &.bg
     background: #7a1b1b
 
   @keyframes animate 
-    0% 
-      // width: 0
-      // height: 0
-      transform: translate(-50%, -50%) scale(.01)
-      opacity: 0.3
     100% 
       // width: 500px
       // height: 500px
-      transform: translate(-50%, -50%) scale(40)
+      transform: translate(-50%, -50%) scale(4)
       opacity: 0

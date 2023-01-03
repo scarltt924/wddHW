@@ -7,6 +7,7 @@
   "keywords": [],
   "license": "ISC",
   "dependencies": {
+    "cwco": "^1.7.8",
     "overlayscrollbars": "^1.13.1",
     "tua-body-scroll-lock": "^1.2.1",
     "vanilla-lazyload": "^17.8.3"
