@@ -1,4 +1,4 @@
-// import OPTION from './option';
+import OPTIONS from './option.js';
 
 // const createTemplate = () => {
 //   const { TEMPLATE } = OPTION;
@@ -6,60 +6,69 @@
 //   container.innerHTML = TEMPLATE();
 // }
 
-
 class Ripple4 extends HTMLElement {
   constructor() {
     super();
-  }
-  // static get styles() {
-  //   return css`
-  //     button { color: red; }
-  //   `;
-  // }
+  };
+  
+  static get observedAttributes() {
+    return [];
+  };
+
   connectedCallback() {
-    this.#init()
-  }
-  #event() {
-    const button = this
-    button.addEventListener('click', (e) => {
-      this.#create(e);
-    });
-  }
-  #create(e) {
-    const button = this
-    const buttons = e.currentTarget;
-  
-    // 可以更改點擊時生成效果樣式的結構
-    let ripples = document.createElement('span');
-  
-    //偵測滑鼠點擊位置
-    let x = e.pageX - $(this).offset().left;
-    let y = e.pageY - $(this).offset().top;
-    ripples.style.left = `${x}px`;
-    ripples.style.top = `${y}px`;
+    this.#create()
+  };
 
-    ripples.classList.add("circle");
-  
-
-    const circle = buttons.getElementsByClassName("circle")[0];
-    
-    if (circle) {
-      circle.remove();
+  #create() {
+    const options = {
+      color: this.getAttribute('r4-color') || OPTIONS.SETTINGS.color,
+      opacity: this.getAttribute('r4-opacity') || OPTIONS.SETTINGS.opacity,
+      duration: this.getAttribute('r4-duration') || OPTIONS.SETTINGS.duration,
     }
+    this.s = {}
+    this.s.options = options
 
-    // 生成
-    button.appendChild(ripples);
-  }
+    this.#init()
+  };
+
   #init() {
     const button = this
     button.classList.add("button");
     this.#event();
-  }
-}
+  };
+
+  #event() {
+    const button = this
+    button.addEventListener('click', (e) => {
+      this.#mount(e);
+    });
+  };
+
+  #mount(e) {
+    const button = this
+    const { color, opacity, duration } = this.s.options
+    
+    // 可以更改點擊時生成效果樣式的結構
+    let ripples = document.createElement('span');
+    
+    //偵測滑鼠點擊位置
+    let x = e.pageX - $(this).offset().left;
+    let y = e.pageY - $(this).offset().top;
+
+    // ripples.style.left = `${x}px`;
+    // ripples.style.top = `${y}px`;
+    ripples.style.cssText = `background: ${color};left: ${x}px;top: ${y}px;opacity: ${opacity};animation-duration: ${duration}ms`
+    
+    ripples.classList.add("circle");
+    
+    // 生成
+    button.appendChild(ripples);
+  };
+};
 
 if (!customElements.get('ripple-btn')) {
   customElements.define('ripple-btn', Ripple4);
-}
+};
 
 export default Ripple4;
 
