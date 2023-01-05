@@ -20,21 +20,34 @@ class Ripple4 extends HTMLElement {
   };
 
   #create() {
+    const eventEffect = this.getAttribute('r4-event');
     const options = {
       color: this.getAttribute('r4-color') || OPTIONS.SETTINGS.color,
       opacity: this.getAttribute('r4-opacity') || OPTIONS.SETTINGS.opacity,
       duration: this.getAttribute('r4-duration') || OPTIONS.SETTINGS.duration,
+      on: this.getAttribute('r4-event') || OPTIONS.SETTINGS.on,
     }
     this.s = {}
     this.s.options = options
 
-    this.#init()
+    this.#event()
+
+    const detectEvent = function() {
+      if (eventEffect === 'mouseDown' || eventEffect === 'mouseHover') {
+        return eventEffect 
+      }
+      else {
+        return options.on
+      }
+    }
+    detectEvent();
+    console.log(detectEvent());
   };
 
   #init() {
-    const button = this
-    button.classList.add("button");
-    this.#event();
+    // const button = this;
+    // button.classList.add("button");
+    // this.#event();
   };
 
   #event() {
