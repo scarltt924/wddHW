@@ -26,6 +26,40 @@ body
   &::-webkit-scrollbar 
     display: none
 
+.square-btn
+  width: 200px
+  height: 50px
+  border: 2px solid #c75539
+  display: flex
+  justify-content: center
+  align-items: center
+  background-color: #c75539
+  color: #fff
+  border-radius: 10rem
+  padding: 14px 30px
+  margin-left: 15px
+  white-space: nowrap
+  flex-shrink: 0
+  cursor: pointer
+  +rwdmax(575)
+    width: 35px
+    height: 35px
+    padding: 0
+    border-radius: 50%
+    margin-left: 25px
+  &::before
+    display: none
+    color: #fff
+    font-size: px(12)
+    +rwdmax(575)
+      display: block
+  &::after
+    content: attr(data-text)
+    color: #fff
+    font-size: px(12)
+    +rwdmax(575)
+      display: none
+
 nav.navbar
   display: flex
   justify-content: center
@@ -71,10 +105,6 @@ section
     // box-shadow: 0 10px 10px 10px rgba(#000, .15)
     // overflow: hidden
   ripple-btn
-    &.square
-      width: 200px
-      height: 50px
-      border: 2px solid #000
     &.circle
       border: none
       width: 100px
