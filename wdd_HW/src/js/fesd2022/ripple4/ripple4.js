@@ -8,15 +8,19 @@ function createRipple(e,r4){
   let ripples = document.createElement('span');
   
   //偵測滑鼠點擊位置
-  let x = e.pageX - button.getBoundingClientRect().left;
-  let y = e.pageY - button.getBoundingClientRect().top;
+  let x = e.clientX - button.getBoundingClientRect().left;
+  let y = e.clientY - button.getBoundingClientRect().top;
 
   ripples.style.cssText = `background: ${color};left: ${x}px;top: ${y}px;opacity: ${opacity};animation-duration: ${duration}ms`
-  
   ripples.classList.add("circle");
   
   // 生成
   button.appendChild(ripples);
+
+  // 生成後消失
+  setTimeout(function () {
+    ripples.remove()
+  }, `${duration}`)
 }
 
 class Ripple4 extends HTMLElement {
@@ -65,7 +69,7 @@ class Ripple4 extends HTMLElement {
     const button = this;
 
     button.addEventListener('click',function(e){
-      if(button.s.options.click === true){
+      if(button.s.options.click){
         createRipple(e,button);
       };
     });

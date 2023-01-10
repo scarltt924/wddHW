@@ -1,5 +1,29 @@
 import Modal4 from '../fesd2022/modal4/modal4'
 
+// const screenWidth = window.innerWidth;
+// const halfWidth = screenWidth / 2;
+// const screenHeight = window.innerHeight;
+// const halfHeight = screenHeight / 2;
+// const mouseX = halfWidth;
+// const mouseY = halfHeight;
+// const eyeX = 50;
+// const eyeY = 50;
+
+// document.addEventListener('mousemove',function(e){
+//     mouseX = e.pageX;
+//     mouseY = e.pageY;
+// });
+
+// function move() {
+//     const eyeX = mouseX / screenWidth * 100;
+//     const eyeY = mouseY / screenHeight * 100;
+//     const eye = document.querySelector('.eye');
+//     eye.style.cssText = `left: ${eyeX}%;top: ${eyeY}%;`;
+//     window.requestAnimationFrame(move);
+// };
+
+
+
 // // rippleButton
 // const button = function() {
 //     const $button = $('.rippleBtn')
@@ -14,7 +38,7 @@ import Modal4 from '../fesd2022/modal4/modal4'
 //             left: x + 'px',
 //             top: y + 'px',
 //         });
-        
+
 //         //生成
 //         $(this).append(ripples);
 
@@ -39,7 +63,7 @@ import Modal4 from '../fesd2022/modal4/modal4'
 //         //     left: x + 'px',
 //         //     top: y + 'px',
 //         // });
-        
+
 //         // //生成
 //         // $(this).append(ripples);
 
@@ -106,44 +130,41 @@ import Modal4 from '../fesd2022/modal4/modal4'
 // var apple = new phone2('apple','31000',false)
 // console.log(apple);
 
-class Person{
-    constructor(age,weight){
-        this.age=age;
-        this.weight=weight;
-        this.property='會在父類別實例中產生的屬性'
+class Person {
+    constructor(age, weight) {
+        this.age = age;
+        this.weight = weight;
+        this.property = '會在父類別實例中產生的屬性'
     }
-    call_this(){
+    call_this() {
         return this;
     }
-    showProperty(){
+    showProperty() {
         console.log(`父類別實例的: ${this.property}`)
     }
-    static SonCanNotUse(){
+    static SonCanNotUse() {
         console.log("老子專用");
         console.log(`父類別私有方法的: ${this.property}`)
-		
-        
     }
 }
-class SuperMan extends Person{
-	constructor(age,weight,power){
-    // 如果在super()之前就呼叫this 的話，會refference error
-		super();
-        this.property="子類用this初始化的property";
-        super.property="子類用super初始化的property";
-		this.power=power;
+class SuperMan extends Person {
+    constructor(age, weight, power) {
+        // 如果在super()之前就呼叫this 的話，會refference error
+        super();
+        this.property = "子類用this初始化的property";
+        super.property = "子類用super初始化的property";
+        this.power = power;
         super.showProperty();
-	}
-	hello(){
-		console.log(`子類實例中，被super.property改掉的property${this.property}`);
-	}
-    static sonPrivateMethod(){
+    }
+    hello() {
+        console.log(`子類實例中，被super.property改掉的property${this.property}`);
+    }
+    static sonPrivateMethod() {
         super.showProperty();
     }
 }
 
-var kkman=new SuperMan(1,2,3)
-
+var kkman = new SuperMan(1, 2, 3)
 
 // 燈箱
 const modalHandler = function () {
@@ -224,9 +245,63 @@ const dropdownHandler = function () {
     })
 }
 
+// const eye = document.querySelector('.eye')
+
+// window.addEventListener('mousemove', (e) => {
+//     const rect = eye.getBoundingClientRect();
+//     eye.offsetLeft = rect.left + document.body.scrollLeft;
+//     eye.offsetTop = rect.top + document.body.scrollTop;
+//     var x = eye.offsetWidth / 2 + (eye.offsetLeft);
+//     var y = eye.offsetHeight / 2 + (eye.offsetTop);
+//     eye.style.top = x + 'px';
+//     eye.style.left = y + 'px';
+// })
+
+var balls = document.getElementsByClassName("pupil");
+document.onmousemove = function(e){
+  var x = e.clientX * 100 / window.innerWidth + "%";
+  var y = e.clientY * 100 / window.innerHeight + "%";
+  //event.clientX => get the horizontal coordinate of the mouse
+  //event.clientY => get the Vertical coordinate of the mouse
+  //window.innerWidth => get the browser width
+  //window.innerHeight => get the browser height
+
+    for(var i=0;i<1;i++){
+        balls[i].style.left = x;
+        balls[i].style.top = y;
+        balls[i].style.transform = "translate(-"+x+",-"+y+")";
+    }
+}
+var words = document.getElementsByClassName("word");
+document.addEventListener('mousemove', function(e) {
+    var x = e.clientX * 100 / window.innerWidth + "%";
+    var y = e.clientY * 100 / window.innerHeight + "%";
+    //event.clientX => get the horizontal coordinate of the mouse
+    //event.clientY => get the Vertical coordinate of the mouse
+    //window.innerWidth => get the browser width
+    //window.innerHeight => get the browser height
+
+    for(var i=0;i<2;i++){
+        words[i].style.left = -x;
+        words[i].style.top = -y;
+        words[i].style.transform = "translate(-"+x+",-"+y+")";
+    }
+})
+
+
 $(() => {
     modalHandler();
     imgPreviewHandler();
     categoryHandler();
     dropdownHandler();
+    // move();
+    function move() {
+        window.addEventListener("mousemove", (e) => {
+            const div = document.querySelector('.pop')
+            div.style.top = e.pageY + 'px';
+            div.style.left = e.pageX + 'px';
+        })
+    }
+    move()
+    // var eye1 = new eye(".eye",  ".pupil", 8, 30);
 });

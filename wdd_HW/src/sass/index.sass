@@ -265,3 +265,147 @@ section
     transition: background-color .4s ease color .4s ease
     +hover 
       color: #8f2929
+
+section.section6 
+  .pop
+    width: 50px
+    height: 50px
+    border-radius: 50%
+    background-color: #00000067
+    position: absolute
+    top: 0
+    left: 0
+    display: block
+    z-index: 99999
+    pointer-events: none
+
+section.section7
+  width: 100%
+  position: relative
+  .eye 
+    position: relative
+    display: inline-block
+    border-radius: 50%
+    height: 35px
+    width: 35px
+    background: red
+    position: absolute
+    bottom: 20px
+    right: 10px
+
+  .eye:after 
+    background-image: url(http://www.i2clipart.com/cliparts/1/1/4/b/128135114b88dbc40dda34cfdbc895d0a86fe6.png)
+    background-repeat:no-repeat
+    background-size: contain
+    width: 17px
+    height: 10px
+    content: ""
+    filter: sepia(1) brightness(0.65)
+
+
+  // .eye
+  //   width: 50px
+  //   height: 50px
+  //   background: #000
+  //   border: 25px solid steelblue
+  //   position: absolute
+  //   border-radius: 50%
+  //   top: 50%
+  //   left: 50%
+  //   transform: translate(-50%, -50%)
+  //   -webkit-transition: border .3s ease-out, width .3s ease-out, height .3s ease-out
+  //   -moz-transition: border .3s ease-out, width .3s ease-out, height .3s ease-out
+  //   -o-transition: border .3s ease-out, width .3s ease-out, height .3s ease-out
+  //   transition: border .3s ease-out, width .3s ease-out, height .3s ease-out
+
+  // .container:hover .eye
+  //   border: 10px solid steelblue
+  //   width: 80px
+  //   height: 80px
+  //   -webkit-transition: border .3s ease-out, width .3s ease-out, height .3s ease-out
+  //   -moz-transition: border .3s ease-out, width .3s ease-out, height .3s ease-out
+  //   -o-transition: border .3s ease-out, width .3s ease-out, height .3s ease-out
+  //   transition: border .3s ease-out, width .3s ease-out, height .3s ease-out
+
+  // .lid
+  //   height: 50%
+  //   width: 100%
+  //   position: absolute
+  //   background: #000
+
+  // .lid-top
+  //   top: -50%
+
+  // .lid-bottom 
+  //   bottom: -50%
+
+  // .lid-go-down 
+  //   animation: lid-go-down .1s 2 alternate
+
+  // .lid-go-up 
+  //   animation: lid-go-up .1s 2 alternate
+
+  // @keyframes lid-go-down 
+  //   0%
+  //     top: -50%
+  //   100%
+  //     top: 0
+
+  // @keyframes lid-go-up 
+  //   0% 
+  //     bottom: -50%
+  //   100% 
+  //     bottom: 0
+
+  // .container
+  //   cursor: pointer
+  //   width: 160px
+  //   height: 200px
+  //   position: absolute
+  //   top: 50%
+  //   left: 50%
+  //   transform: translate(-50%, -50%)
+  //   border: 30px solid #000
+  //   border-top: 15px solid #000
+  //   border-bottom: 15px solid #000
+  //   border-radius: 50%
+  //   overflow: hidden
+
+section.section8 
+  .man 
+    display: block
+    width: 500px
+    height: 500px
+    position: relative
+    margin: auto
+    background-color: pink
+  .eye
+    border-radius: 50%
+    display: block
+    position: absolute
+    width: 50px
+    height: 50px
+    background-color: #fff
+    top: 50px
+    left: 50px
+    // transform: translate3d(-50% ,-50% ,0)
+  .pupil
+    width: 10px
+    height: 10px
+    background-color: #000
+    border-radius: 50%
+    display: block
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate3d(-50%, -50%, 0)
+  .word
+    font-size: px(50)
+    display: block
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate3d(-50%, -50%, 0)
+    &.two
+      font-size: px(60)
+      color: #fff
