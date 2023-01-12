@@ -26,6 +26,7 @@ body
   &::-webkit-scrollbar 
     display: none
 
+
 .square-btn
   width: 200px
   height: 50px
@@ -266,18 +267,22 @@ section
     +hover 
       color: #8f2929
 
-section.section6 
-  .pop
-    width: 50px
-    height: 50px
-    border-radius: 50%
-    background-color: #00000067
-    position: absolute
-    top: 0
-    left: 0
-    display: block
-    z-index: 99999
-    pointer-events: none
+
+.pop
+  width: 50px
+  height: 50px
+  border-radius: 50%
+  background-color: #00000067
+  position: absolute
+  top: 0
+  left: 0
+  display: block
+  z-index: 99999
+  pointer-events: none
+  transition: width .4s ease height .4s ease
+  &.hover
+    width: 0
+    height: 0
 
 section.section7
   width: 100%
@@ -408,5 +413,5 @@ section.section8
     left: 50%
     transform: translate3d(-50%, -50%, 0)
     &.two
-      font-size: px(60)
+      // font-size: px(60)
       color: #fff

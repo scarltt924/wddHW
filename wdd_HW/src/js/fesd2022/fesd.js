@@ -7,6 +7,7 @@ export { default as Video4 } from './video4/video4';
 export { default as Share4 } from './share4/share4';
 export { default as dropdown4 } from './dropdown4/dropdown4';
 export { default as ripple4 } from './ripple4/ripple4';
+export { default as Follow4 } from './follow4/follow4';
 export { default as ImageValidate } from './image-validate/image-validate';
 export { default as CategorySlider } from './category-slider/category-slider';
 export { default as ImagePreview } from './image-preview/image-preview';

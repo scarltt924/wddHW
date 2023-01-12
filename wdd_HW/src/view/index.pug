@@ -13,6 +13,7 @@ html(lang="en")
           p ㋡
 
     main
+      .pop
       section.section1(data-aost data-aost-fade-up)
         h2 燈箱 + 錨點 + Aost4
         button(onclick="_g.modalOpen()") 點我！點我！
@@ -89,18 +90,15 @@ html(lang="en")
           .photo-box(video-target video-id="kQvT37OzkP8" video-mode="onPage" video-type="youtube")
             img(alt="" src="https://picsum.photos/460/260")
       
-      section.section6 
-        .pop
-
       section.section7 
         .eye 
       
       section.section8 
         .man 
           .eye
-            .pupil 
-          .word.two YOOOOOOOOOO
-          .word YOOOOOOOOOO
+            .pupil(data-speed="-10")
+          .word.two(data-speed="-5.5") YOOOOOOOOOO
+          .word.one(data-speed="1") YOOOOOOOOOO
 
     // 共用 JS
     script(defer src="./js/jquery-3.6.0.min.js")

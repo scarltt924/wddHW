@@ -96,6 +96,8 @@ class Anchor4 {
   #init() {
     const { elements, options } = this
 
+    document.querySelector(el)
+
     elements.forEach(el => {
       el.anchor = {}
       el.anchor.instance = this

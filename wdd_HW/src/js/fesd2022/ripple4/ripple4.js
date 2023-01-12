@@ -1,8 +1,8 @@
 import OPTIONS from './option.js';
 
 function createRipple(e,r4){
-  const button = r4
-  const { color, opacity, duration } = r4.s.options
+  const button = r4;
+  const { color, opacity, duration } = r4.s.options;
 
   // 可以更改點擊時生成效果樣式的結構
   let ripples = document.createElement('span');
@@ -19,9 +19,9 @@ function createRipple(e,r4){
 
   // 生成後消失
   setTimeout(function () {
-    ripples.remove()
-  }, `${duration}`)
-}
+    ripples.remove();
+  }, `${duration}`);
+};
 
 class Ripple4 extends HTMLElement {
   constructor() {
@@ -29,7 +29,7 @@ class Ripple4 extends HTMLElement {
   };
 
   connectedCallback() {
-    this.#create()
+    this.#create();
   };
 
   #create() {
@@ -44,9 +44,8 @@ class Ripple4 extends HTMLElement {
     };
     
     this.s.options = options;
-    if(this.s.eventEffect){
-      this.classList.add('hover-btn')
-    }
+    if(this.s.eventEffect) this.classList.add('hover-btn');
+    
     this.#init();
   };
 
@@ -56,7 +55,7 @@ class Ripple4 extends HTMLElement {
   };
 
   #ball() {
-    const button = this
+    const button = this;
     const ball = document.createElement('i');
     ball.classList.add('hover-ball');
     ball.style.width =  '0px';
@@ -68,12 +67,14 @@ class Ripple4 extends HTMLElement {
     const ball = this.querySelector('i');
     const button = this;
 
+    // ripple點擊事件
     button.addEventListener('click',function(e){
       if(button.s.options.click){
         createRipple(e,button);
       };
     });
     
+    // hover
     button.addEventListener('mouseenter',function(e){
       if(button.s.options.hover){
         const posX = e.clientX - button.getBoundingClientRect().left;
@@ -82,6 +83,7 @@ class Ripple4 extends HTMLElement {
         ball.style.height = button.offsetWidth * 2.1 + 'px';
         ball.style.left = posX + 'px';
         ball.style.top = posY + 'px';
+
       };
     });
     button.addEventListener('mouseleave',function(e){
